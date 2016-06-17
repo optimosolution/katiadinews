@@ -189,4 +189,20 @@ class UserAdmin extends CActiveRecord {
         }
     }
 
+    public static function get_day($date) {
+        if (empty($date) || $date == '0000-00-00' || $date == '0000-00-00 00:00:00') {
+            return null;
+        } else {
+            return date("j", strtotime($date));
+        }
+    }
+
+    public static function get_month_year($date) {
+        if (empty($date) || $date == '0000-00-00' || $date == '0000-00-00 00:00:00') {
+            return null;
+        } else {
+            return date("M Y", strtotime($date));
+        }
+    }
+
 }

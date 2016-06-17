@@ -57,6 +57,9 @@ Yii::app()->clientScript->registerScript('search', "
         <?php echo $form->dropDownListControlGroup($model, 'featured', array('1' => 'Yes', '0' => 'No'), array('class' => 'span12')); ?>
     </div>
     <div class="span2">
+        <?php echo $form->dropDownListControlGroup($model, 'editorial_choice', array('1' => 'Yes', '0' => 'No'), array('class' => 'span12')); ?>
+    </div>
+    <div class="span2">
         <?php echo $form->textFieldControlGroup($model, 'ordering', array('class' => 'span12')); ?>
     </div>
     <div class="span4">
@@ -73,6 +76,18 @@ Yii::app()->clientScript->registerScript('search', "
 </div>
 <div class="form-actions">
     <?php echo TbHtml::submitButton($model->isNewRecord ? 'Create' : 'Save', array('color' => TbHtml::BUTTON_COLOR_PRIMARY)); ?>
+    <?php
+    echo TbHtml::submitButton('Save & New', array(
+        'color' => TbHtml::BUTTON_COLOR_PRIMARY,
+        'name' => 'savennew'
+    ));
+    ?>
+    <?php
+    echo TbHtml::submitButton('Save & Edit', array(
+        'color' => TbHtml::BUTTON_COLOR_PRIMARY,
+        'name' => 'saveedit'
+    ));
+    ?>
     <?php echo TbHtml::resetButton('Reset', array('color' => TbHtml::BUTTON_COLOR_INFO)); ?>
 </div>
 <?php $this->endWidget(); ?>

@@ -2,7 +2,7 @@
 
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
-    'name' => 'OPTIMO CMS',
+    'name' => 'Katiadinews.com',
     //Default time zone
     'timeZone' => 'Asia/Dhaka',
     //Default source language
@@ -46,7 +46,7 @@ return array(
         ),
         // uncomment the following to use a MySQL database
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=optimocms',
+            'connectionString' => 'mysql:host=localhost;dbname=katiadinews',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => '',
@@ -77,6 +77,6 @@ return array(
     // using Yii::app()->params['paramName']
     'params' => array(
         // this is used in contact page
-        'adminEmail' => 'info@domain.com',
+        'adminEmail' => 'info@katiadinews.com',
     ),
 );

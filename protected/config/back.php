@@ -6,7 +6,7 @@ return CMap::mergeArray(
                 require(dirname(__FILE__) . '/main.php'), array(
             // Put back-end settings there.
             'theme' => 'admin',
-            'name' => 'OPTIMO CMS',
+            'name' => 'Katiadinews.com',
             // path aliases
             'aliases' => array(
                 // yiistrap configuration
@@ -42,7 +42,7 @@ return CMap::mergeArray(
                 'yiiwheels' => array(
                     'class' => 'yiiwheels.YiiWheels',
                 ),
-            // uncomment the following to enable URLs in path-format
+                // uncomment the following to enable URLs in path-format
 //                'urlManager' => array(
 //                    'urlFormat' => 'path',
 //                    'showScriptName' => true,
@@ -57,8 +57,8 @@ return CMap::mergeArray(
             ),
             'params' => array(
                 // this is used in contact page
-                'Companyname' => 'OPTIMO CMS',
-                'adminEmail' => 'info@domain.com',
+                'Companyname' => 'Katiadinews.com',
+                'adminEmail' => 'info@katiadinews.com',
                 'pageSize' => 10,
                 'pageSize20' => 20,
                 'pageSize50' => 50,
