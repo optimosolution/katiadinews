@@ -41,6 +41,7 @@
         <!--[if lte IE 8]>
                 <script src="<?php echo Yii::app()->theme->baseUrl; ?>/assets/plugins/respond.js"></script>
         <![endif]-->
+        <link href="<?php echo Yii::app()->theme->baseUrl; ?>/css/web.css" rel="stylesheet" type="text/css" />
     </head>
     <body class="smoothscroll">
         <div id="wrapper">
@@ -95,52 +96,20 @@
             </div>      
             <?php echo $content; ?>                        
             <!-- FOOTER -->
-            <footer id="footer">
+            <footer id="footer-top">
                 <div class="container">
                     <div class="row">
-                        <!-- col #1 -->
-                        <div class="logo_footer dark col-md-4">
-                            <h4>Contact <strong>Us</strong></h4>
-                            <p class="block">
-                                <?php echo Content::get_introtext(2); ?>
-                            </p>
-                            <p class="block"><!-- social -->
-                                <a href="#" class="social fa fa-facebook"></a>
-                                <a href="#" class="social fa fa-twitter"></a>
-                                <a href="#" class="social fa fa-google-plus"></a>
-                                <a href="#" class="social fa fa-linkedin"></a>
-                            </p><!-- /social -->
-                        </div>
-                        <!-- /col #1 -->
-                        <!-- col #2 -->
-                        <div class="spaced col-md-4 col-sm-4">
-                            <h4>Footer <strong>Menu</strong></h4>
-                            <ul class="list-unstyled">
-                                <li><?php echo CHtml::link('<i class="fa fa-sign-out"></i> ENGLISH', array('news/index', 'id' => 10), array()); ?></li>                                
-                                <li><?php echo CHtml::link('<i class="fa fa-sign-out"></i> ' . ContentCategory::getCategoryName(11), array('news/index', 'id' => 11), array()); ?></li>                                
-                                <li><?php echo CHtml::link('<i class="fa fa-sign-out"></i> ' . Title::get_title(6), array('youtube/index'), array()); ?></li>                                
-                                <li><?php echo CHtml::link('<i class="fa fa-sign-out"></i> WebLink', array('weblink/index'), array()); ?></li>                                
-                                <li><?php echo CHtml::link('<i class="fa fa-sign-out"></i> ' . Title::get_title(7), array('gallery/index', 'id' => 3), array()); ?></li>                                                                
-                            </ul>
-                        </div>
-                        <!-- /col #2 -->
-                        <!-- col #4 -->
-                        <div class="spaced col-md-4 col-sm-4">
-                            <h4>Subscribe <strong>Us</strong></h4>
-                            <p>Exclusive reporting, including insider sports coverage of Colorado's teams, investigative reporting, featured content, local coverage and access to premium stories.</p>
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
 
-                            <h4><small><strong>Subscribe to our Newsletter</strong></small></h4>
-                            <form id="newsletterSubscribe" method="post" action="php/newsletter.php" class="input-group">
-                                <input required type="email" class="form-control" name="newsletter_email" id="newsletter_email" value="" placeholder="E-mail Address">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-primary">SUBMIT</button>
-                                </span>
-                            </form>
                         </div>
-                        <!-- /col #4 -->
+                        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                            Website: <br />
+                            Email: 
+                        </div>
                     </div>
                 </div>
-                <hr />
+            </footer>
+            <footer id="footer">
                 <div class="copyright">
                     <div class="container text-center fsize12">
                         Copyright &copy; <?php echo date('Y'); ?> <?php echo Yii::app()->name; ?>. Designed & Developed By <a href="http://www.optimosolution.com" target="_blank">Optimo Solution</a>.

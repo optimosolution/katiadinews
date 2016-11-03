@@ -64,20 +64,9 @@ class SiteController extends Controller {
             'pagination' => array(
                 'pageSize' => 10,
             ),
-        ));
-        //Featured articles
-        $criteria_featured = new CDbCriteria;
-        $criteria_featured->addCondition('state=1 AND catid !=1 AND featured=1');
-        $criteria_featured->order = 'created DESC';
-        $dataProvider_featured = new CActiveDataProvider('Content', array(
-            'criteria' => $criteria_featured,
-            'pagination' => array(
-                'pageSize' => 6,
-            ),
-        ));
+        ));        
         $this->render('index', array(
             'dataProvider' => $dataProvider,
-            'dataProvider_featured' => $dataProvider_featured,
         ));
     }
 

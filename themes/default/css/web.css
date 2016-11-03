@@ -1,0 +1,32 @@
+#footer-top {
+    background-color: #E7E7E7;
+    border-bottom: 1px solid #999999;
+    color: #333333;
+    display: block;
+    vertical-align: bottom;
+    z-index: 101;
+    padding: 10px 0px;
+}
+
+a.featured:link, a.featured:hover, a.featured:active, a.featured:visited {
+    color: #333;
+    font-size: 16px;
+    text-decoration: none;
+    letter-spacing: normal;
+}
+.featured-header{
+    font-size: 1.5em;
+    letter-spacing: normal;
+    margin-bottom: 10px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background-color: #E90000;
+    padding: 5px;
+}
+
+a.category-header:link, a.category-header:hover, a.category-header:active, a.category-header:visited {
+    color: #FFF !important;
+    font-size: 20px;
+    text-decoration: none;
+    letter-spacing: normal;
+}

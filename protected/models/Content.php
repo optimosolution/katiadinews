@@ -295,7 +295,7 @@ class Content extends CActiveRecord {
                 echo Content::get_picture_fixed($value['id']);
                 echo '<h4>' . CHtml::link($value['title'], array('news/view', 'id' => $value['id']), array()) . '</h4>';
             } else {
-                echo '<div>' . CHtml::link('<i class="fa fa-sign-out"></i> ' . $value['title'], array('news/view', 'id' => $value['id']), array()) . '</div>';
+                echo '<div>' . CHtml::link('<i class="fa fa-sign-out"></i> ' . $value['title'], array('news/view', 'id' => $value['id']), array('class' => 'featured')) . '</div>';
             }
             $i++;
         }
@@ -318,11 +318,31 @@ class Content extends CActiveRecord {
                 echo '<h4>' . CHtml::link($value['title'], array('news/view', 'id' => $value['id']), array()) . '</h4>';
                 echo '</div>';
             } else {
-                echo '<div>' . CHtml::link('<i class="fa fa-sign-out"></i> ' . $value['title'], array('news/view', 'id' => $value['id']), array('style' => 'font-size:16px;')) . '<br /><span style="font-size:11px;">' . UserAdmin::get_date_time($value['created']) . '</span></div>';
+                echo '<div>' . CHtml::link('<i class="fa fa-sign-out"></i> ' . $value['title'], array('news/view', 'id' => $value['id']), array('class' => 'featured')) . '<br /><span style="font-size:11px;">' . UserAdmin::get_date_time($value['created']) . '</span></div>';
             }
             $i++;
         }
         echo '</div>';
+    }
+
+    public static function get_featured_news($limit_start, $limit_end) {
+        $array = Content::model()->findAll(
+                array(
+                    'select' => 'id,title,catid,introtext,created',
+                    'condition' => 'state=1 AND catid !=1 AND featured=1',
+                    'order' => 'created DESC, id DESC',
+                    'limit' => '5',
+        ));
+        $oDbConnection = Yii::app()->db;
+        $oCommand = $oDbConnection->createCommand('SELECT id,title,catid,introtext,created FROM {{content}} WHERE featured=1 AND state = 1 AND catid !=1 ORDER BY created DESC, id DESC LIMIT ' . (int) $limit_start . ',' . (int) $limit_end);
+        $oCDbDataReader = $oCommand->queryAll();
+        foreach ($oCDbDataReader as $key => $value) {
+            echo '<div class="row">';
+            echo '<div class="col-lg-3 col-md-3 col-sm-3">' . Content::get_picture_responsive($value['id']) . '</div>';
+            echo '<div class="col-lg-9 col-md-9 col-sm-9">' . CHtml::link($value['title'], array('news/view', 'id' => $value['id']), array('class' => 'featured')) . '</div>';
+            echo '</div>';
+            echo '<hr />';
+        }
     }
 
 }
