@@ -18,6 +18,11 @@ $this->pageTitle = Yii::app()->name;
     </div>
 </div>
 <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 no-padding">
+        <?php $this->get_advertisement_feature(6); ?>
+    </div> 
+</div>
+<div class="row">
     <div class="col-md-4">
         <div class="featured-header"><?php echo CHtml::link(ContentCategory::getCategoryName(2), array('news/index', 'id' => 2), array('class' => 'category-header', 'style' => 'color: #FFF;')); ?></div>
         <?php Content::get_news_home(2); ?>
@@ -30,6 +35,11 @@ $this->pageTitle = Yii::app()->name;
         <div class="featured-header"><?php echo CHtml::link(ContentCategory::getCategoryName(4), array('news/index', 'id' => 4), array('class' => 'category-header', 'style' => 'color: #FFF;')); ?></div>
         <?php Content::get_news_home(4); ?>
     </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 no-padding">
+        <?php $this->get_advertisement_middle(7); ?>
+    </div> 
 </div>
 <div class="row">
     <div class="col-md-4">
@@ -46,6 +56,11 @@ $this->pageTitle = Yii::app()->name;
     </div>
 </div>
 <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 no-padding">
+        <?php $this->get_advertisement_middle(8); ?>
+    </div> 
+</div>
+<div class="row">
     <div class="col-md-4">
         <div class="featured-header"><?php echo CHtml::link(ContentCategory::getCategoryName(14), array('news/index', 'id' => 14), array('class' => 'category-header', 'style' => 'color: #FFF;')); ?></div>
         <?php Content::get_news_home(14); ?>
@@ -58,6 +73,11 @@ $this->pageTitle = Yii::app()->name;
         <div class="featured-header"><?php echo CHtml::link(ContentCategory::getCategoryName(16), array('news/index', 'id' => 16), array('class' => 'category-header', 'style' => 'color: #FFF;')); ?></div>
         <?php Content::get_news_home(16); ?>
     </div>       
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 no-padding">
+        <?php $this->get_advertisement_middle(9); ?>
+    </div> 
 </div>
 <div class="row">
     <div class="col-md-4">
@@ -74,6 +94,11 @@ $this->pageTitle = Yii::app()->name;
     </div>
 </div>
 <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 no-padding">
+        <?php $this->get_advertisement_middle(10); ?>
+    </div> 
+</div>
+<div class="row">
     <div class="col-md-4">
         <div class="featured-header"><?php echo CHtml::link(ContentCategory::getCategoryName(20), array('news/index', 'id' => 20), array('class' => 'category-header', 'style' => 'color: #FFF;')); ?></div>
         <?php Content::get_news_home(20); ?>
@@ -86,4 +111,9 @@ $this->pageTitle = Yii::app()->name;
         <div class="featured-header"><?php echo CHtml::link(ContentCategory::getCategoryName(21), array('news/index', 'id' => 21), array('class' => 'category-header', 'style' => 'color: #FFF;')); ?></div>
         <?php Content::get_news_home(21); ?>
     </div>
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 no-padding">
+        <?php $this->get_advertisement_middle(11); ?>
+    </div> 
 </div>

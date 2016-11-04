@@ -30,3 +30,6 @@ a.category-header:link, a.category-header:hover, a.category-header:active, a.cat
     text-decoration: none;
     letter-spacing: normal;
 }
+.no-padding{
+    padding: 0px;
+}

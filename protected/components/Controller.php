@@ -163,4 +163,53 @@ class Controller extends CController {
         }
     }
 
+    public function get_advertisement_feature($catid) {
+        $array = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('{{banner}}')
+                //->where('published=1 AND catid=' . $catid . ' AND publish_up <= NOW()  AND publish_down >= NOW()')
+                ->where('published=1 AND catid=' . (int) $catid)
+                ->order('ordering ASC, created_on DESC')
+                ->queryAll();
+
+        foreach ($array as $key => $values) {
+            echo '<div class="col-lg-6 col-md-6 col-sm-6 no-padding-left-right">';
+            $banner = CHtml::image(Yii::app()->baseUrl . '/uploads/banners/' . $values['banner'], $values['name'], array('title' => $values['name'], 'class' => 'img-responsive thumbnail'));
+            echo CHtml::link($banner, $values['clickurl'], array('target' => '_blank'));
+            echo '</div>';
+        }
+    }
+
+        public function get_advertisement_middle($catid) {
+        $array = Yii::app()->db->createCommand()
+                ->select('*')
+                ->from('{{banner}}')
+                //->where('published=1 AND catid=' . $catid . ' AND publish_up <= NOW()  AND publish_down >= NOW()')
+                ->where('published=1 AND catid=' . (int) $catid)
+                ->order('ordering ASC, created_on DESC')
+                ->queryAll();
+
+        foreach ($array as $key => $values) {
+            echo '<div class="col-lg-4 col-md-4 col-sm-4">';
+            $banner = CHtml::image(Yii::app()->baseUrl . '/uploads/banners/' . $values['banner'], $values['name'], array('title' => $values['name'], 'class' => 'img-responsive thumbnail'));
+            echo CHtml::link($banner, $values['clickurl'], array('target' => '_blank'));
+            echo '</div>';
+        }
+    }
+    
+    public function get_marquee_news() {
+        $array = Yii::app()->db->createCommand()
+                ->select('id,title')
+                ->from('{{content}}')
+                ->where('state=1')
+                ->limit('20')
+                ->order('created DESC, id DESC')
+                ->queryAll();
+        foreach ($array as $key => $values) {
+            echo '<span>';
+            echo CHtml::link($values['title'], array('/news/view', 'id' => $values['id']), array('target' => '_blank', 'class' => 'featured'));
+            echo '</span>';
+            echo '<span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>';
+        }
+    }
 }

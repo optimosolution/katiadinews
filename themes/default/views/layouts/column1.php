@@ -1,7 +1,15 @@
 <?php $this->beginContent('//layouts/main'); ?>
 <!-- CONTENT -->
-<section>
+<section style="padding-top: 20px;">
     <div class="container">
+        <div class="row alert alert-success">
+            <div class="col-md-2 no-padding">
+                <h4><?php echo Title::get_title(2); ?></h4>
+            </div>
+            <div class="col-md-10 no-padding">
+                <marquee behavior="scroll" onmouseover="this.stop()" onmouseout="this.start()"><?php $this->get_marquee_news(); ?></marquee>
+            </div>
+        </div>
         <div id="blog" class="row">
             <!-- BLOG ARTICLE LIST -->
             <div class="col-md-9 col-sm-9">
@@ -9,11 +17,7 @@
             </div>
             <!-- /BLOG ARTICLE LIST -->
             <!-- BLOG SIDEBAR -->
-            <div class="col-md-3 col-sm-3">  
-                <!-- Advertisement -->
-                <div class="widget">
-                    <?php $this->get_advertisement(6); ?>                    
-                </div>
+            <div class="col-md-3 col-sm-3"> 
                 <!-- Video -->
                 <div class="widget">
                     <iframe width="265" height="215" src="//www.youtube.com/embed/<?php echo $this->get_youtube_video(); ?>" frameborder="0" allowfullscreen></iframe>                
